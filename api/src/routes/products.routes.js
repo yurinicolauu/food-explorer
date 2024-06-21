@@ -14,9 +14,23 @@ const productsRoutes = Router()
 productsRoutes.use(ensureAuthenticated)
 
 productsRoutes.get('/', productsController.index)
-productsRoutes.post('/', verifyUserAuthorization, upload.single('image'), productsController.create)
+productsRoutes.post(
+  '/',
+  verifyUserAuthorization(['admin']),
+  upload.single('image'),
+  productsController.create
+)
 productsRoutes.get('/:id', productsController.show)
-productsRoutes.put('/:id', verifyUserAuthorization, upload.single('image'), productsController.update)
-productsRoutes.delete('/:id', verifyUserAuthorization, productsController.delete)
+productsRoutes.put(
+  '/:id',
+  verifyUserAuthorization(['admin']),
+  upload.single('image'),
+  productsController.update
+)
+productsRoutes.delete(
+  '/:id',
+  verifyUserAuthorization(['admin']),
+  productsController.delete
+)
 
 module.exports = productsRoutes

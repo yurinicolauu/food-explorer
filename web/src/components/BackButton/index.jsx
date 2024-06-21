@@ -1,9 +1,9 @@
 import { Container } from './styles'
 
-export function BackButton({ title }) {
+export function BackButton({ title, ...rest }) {
   return (
-    <Container>
-      <img src='./src/assets/CaretLeft.svg' alt='Botão para esquerda' />
+    <Container {...rest}>
+      <img src='/src/assets/CaretLeft.svg' alt='Botão para esquerda' />
       <p>{title}</p>
     </Container>
   )

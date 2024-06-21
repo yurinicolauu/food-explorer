@@ -8,7 +8,8 @@ export const Container = styled.button`
   align-items: center;
   justify-content: center;
   padding: 1.2rem 3.2rem;
-  background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
+  background-color: ${({ theme, secondary }) =>
+    secondary ? theme.COLORS.DARK_800 : theme.COLORS.TOMATO_100};
 
   white-space: nowrap;
 

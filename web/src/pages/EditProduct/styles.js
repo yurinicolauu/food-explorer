@@ -3,10 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
   margin-top: 14.4rem;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   header {
     position: fixed;
@@ -27,7 +23,9 @@ export const Form = styled.div`
   grid-template-columns: auto 1fr 1fr 1fr 1fr;
   gap: 3.2rem;
 
-  > Button {
+  > .buttons {
+    display: flex;
+    gap: 3.2rem;
     grid-area: g;
     justify-self: right;
     width: fit-content;
@@ -165,6 +163,4 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  width: 100%;
-  max-width: 120rem;
 `

@@ -20,6 +20,7 @@ export const Container = styled.div`
     border: none;
     padding: 1.2rem 1.4rem;
     border-radius: 0.8rem;
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.LIGHT_500};

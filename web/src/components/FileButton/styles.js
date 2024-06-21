@@ -5,8 +5,9 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 0.8rem;
   position: relative;
+  cursor: pointer;
 
-  width: 100%;
+  width: 19.5rem;
 
   font-family: 'Roboto';
   font-size: 1.6rem;
@@ -14,6 +15,8 @@ export const Container = styled.div`
   > img {
     height: 2rem;
     position: absolute;
+    bottom: 1.4rem;
+    left: 1.4rem;
   }
 
   > label {
@@ -22,10 +25,11 @@ export const Container = styled.div`
 
   > input {
     color: transparent;
+    cursor: pointer;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_900};
     border: none;
-    padding: 1.2rem 1.4rem;
+    padding: 1.2rem 1.4rem 1.2rem 4.8rem;
     border-radius: 0.8rem;
 
     &::-webkit-file-upload-button {

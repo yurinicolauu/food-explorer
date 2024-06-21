@@ -3,35 +3,49 @@ import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { Stepper } from '../../components/Stepper'
 import { Button } from '../../components/Button'
-import { Ingredient } from '../../components/Ingredient'
+import { Ingredient } from '../../components/Ingredient/index'
 import { BackButton } from '../../components/BackButton'
+import { useEffect, useState } from 'react'
+import { api } from '../../services/api'
+import { useParams } from 'react-router-dom'
 
 export function Product() {
+  const [product, setProduct] = useState()
+  const { id } = useParams()
+
+  useEffect(() => {
+    async function fetchProduct() {
+      try {
+        const response = await api.get(`/products/${id}`)
+        setProduct(response.data)
+        console.log(response.data)
+      } catch (error) {
+        console.error('Falha ao buscar produto:', error)
+      }
+    }
+    fetchProduct()
+  }, [id])
+
   return (
     <Container>
       <Header />
       <div className='back-button'>
-        <BackButton title={'voltar'} />
+        <BackButton title={'voltar'} to='/' />
       </div>
       <Content>
-        <img src='./src/assets/Meal01.png' alt='' />
+        <img src={`${api.defaults.baseURL}/files/${product.image}`} alt='' />
         <div className='details'>
-          <h1>Salada Ravanello</h1>
-          <p>
-            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O
-            pão naan dá um toque especial.
-          </p>
+          <h1>{product.name}</h1>
+          <p>{product.description}</p>
           <div className='ingredients'>
-            <Ingredient title='alface' />
-            <Ingredient title='cebloa' />
-            <Ingredient title='pão naan' />
-            <Ingredient title='pepino' />
-            <Ingredient title='rabanete' />
-            <Ingredient title='tomate' />
+            {product.ingredients &&
+              product.ingredients.map(ingredient => (
+                <Ingredient title={ingredient.name} key={ingredient.id} />
+              ))}
           </div>
           <div className='stepper'>
             <Stepper count={'01'} />
-            <Button title={'incluir R$ 25,00'} />
+            <Button title={`incluir R$ ${product.price}`} />
           </div>
         </div>
       </Content>

@@ -4,9 +4,22 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
+  align-items: center;
 
   .back-button {
     margin: 2.4rem 0 0 12.4rem;
+    width: 100%;
+    max-width: 120rem;
+  }
+
+  margin-top: 14.4rem;
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
   }
 `
 
@@ -17,6 +30,8 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 12.4rem;
+  width: 100%;
+  max-width: 120rem;
 
   .details {
     display: flex;

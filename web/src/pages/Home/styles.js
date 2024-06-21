@@ -4,12 +4,22 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
+  margin-top: 14.4rem;
+  width: 100%;
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+  }
 `
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
+  align-items: center;
 
   padding: 0 12.4rem;
 `
@@ -27,6 +37,7 @@ export const Hero = styled.div`
   border-radius: 0.8rem;
 
   width: 100%;
+  max-width: 120rem;
   height: 26rem;
 
   background: ${({ theme }) => theme.COLORS.GRADIENT_200};

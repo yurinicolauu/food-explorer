@@ -7,7 +7,9 @@ export const Container = styled.div`
 
   padding: 0 9.6rem;
 
-  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 120rem;
 
   > img {
     height: 4.8rem;

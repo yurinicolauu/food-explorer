@@ -8,19 +8,16 @@ export default createGlobalStyle`
   }
 
   #root {
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   :root {
     font-size: 62.5%;
   }
 
-  html {
-    min-height: 100vh;
-  }
-
   body {
-    min-height: 100vh;
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
@@ -35,6 +32,9 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    font-size: 1.4rem;
+    line-height: 2.4rem;
   }
 
   button, a {

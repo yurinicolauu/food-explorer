@@ -19,6 +19,5 @@ module.exports = {
 			),
 		},
 		useNullAsDefault: true,
-		debug: true,
 	},
 }

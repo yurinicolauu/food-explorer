@@ -50,9 +50,8 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
   }
 
-  > img {
+  .link-image {
     width: 17.6rem;
-    pointer-events: none;
   }
 
   > div {

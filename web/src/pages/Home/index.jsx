@@ -1,21 +1,32 @@
+import { useState } from 'react'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
-import { Section } from '../../components/Section'
+import { ProductsSection } from '../../components/ProductsSection'
 import { Container, Hero, Content } from './styles'
 
 export function Home() {
+  const [search, setSearch] = useState('')
+
   return (
     <Container>
-      <Header />
+      <Header onSearchChange={setSearch} className='header'/>
       <Content>
         <Hero>
-          <img src='./src/assets/Hero.png' alt='' />
+          <img src='/src/assets/Hero.png' alt='' />
           <h1>Sabores inigualáveis</h1>
           <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
         </Hero>
-        <Section title='Refeições'></Section>
-        <Section title='Sobremesas'></Section>
-        <Section title='Bebidas'></Section>
+        <ProductsSection
+          title='Refeições'
+          category='Refeição'
+          search={search}
+        />
+        <ProductsSection
+          title='Sobremesas'
+          category='Sobremesa'
+          search={search}
+        />
+        <ProductsSection title='Bebidas' category='Bebida' search={search} />
       </Content>
       <Footer />
     </Container>
