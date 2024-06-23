@@ -3,7 +3,7 @@ import { Product } from '../Product'
 import { Container } from './styles'
 import { motion, useMotionValue, useAnimate } from 'framer-motion'
 import { api } from '../../services/api'
-import { useAuth } from '../../hooks/useAuth'
+import { CaretLeft, CaretRight } from '../../assets'
 
 export function ProductsSection({ title, category, search }) {
   const [products, setProducts] = useState([])
@@ -95,10 +95,10 @@ export function ProductsSection({ title, category, search }) {
             ))}
         </motion.div>
         <motion.button className='previous' onClick={slideToPrev}>
-          <img src='/src/assets/CaretLeft.svg' alt='Botão para esquerda' />
+          <img src={CaretLeft} alt='Botão para esquerda' />
         </motion.button>
         <motion.button className='next' onClick={slideToNext}>
-          <img src='/src/assets/CaretRight.svg' alt='Botão para direita' />
+          <img src={CaretRight} alt='Botão para direita' />
         </motion.button>
       </motion.div>
     </Container>

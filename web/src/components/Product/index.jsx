@@ -5,6 +5,7 @@ import { api } from '../../services/api'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 import { USER_ROLE } from '../../utils/roles'
+import { Pencil, Heart } from '../../assets'
 
 export function Product({ id, image, name, description, price }) {
   const { user } = useAuth()
@@ -14,12 +15,12 @@ export function Product({ id, image, name, description, price }) {
       {user.role === USER_ROLE.ADMIN ? (
         <button>
           <Link to={`/edit/${id}`}>
-            <img src='/src/assets/Pencil.svg' alt='' />
+            <img src={Pencil} alt='' />
           </Link>
         </button>
       ) : (
         <button>
-          <img src='/src/assets/Heart.svg' alt='' />
+          <img src={Heart} alt='' />
         </button>
       )}
       <Link to={`/products/${id}`}>

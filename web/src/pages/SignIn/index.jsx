@@ -5,6 +5,7 @@ import { Form } from '../../components/Form'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { Link } from 'react-router-dom'
+import { Logo } from '../../assets'
 
 export function SignIn() {
   const [email, setEmail] = useState('')
@@ -17,7 +18,7 @@ export function SignIn() {
 
   return (
     <Container>
-      <img src='/src/assets/Logo.svg' alt='' />
+      <img src={Logo} alt='' />
       <Form>
         <h1>Faça Login</h1>
         <Input

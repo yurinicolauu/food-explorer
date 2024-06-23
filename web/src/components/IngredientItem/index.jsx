@@ -1,4 +1,5 @@
 import { Container } from './styles'
+import { Plus, Close } from '../../assets'
 
 export function IngredientItem({ isNew, value, onClick, ...rest }) {
   return (
@@ -10,13 +11,11 @@ export function IngredientItem({ isNew, value, onClick, ...rest }) {
         readOnly={!isNew}
         {...rest}
       />
-      <button
-        type='button'
-        onClick={onClick}>
+      <button type='button' onClick={onClick}>
         {isNew ? (
-          <img src='/src/assets/Plus.svg' alt='Adicionar novo ingrediente' />
+          <img src={Plus} alt='Adicionar novo ingrediente' />
         ) : (
-          <img src='/src/assets/Close.svg' alt='Deletar ingrediente' />
+          <img src={Close} alt='Deletar ingrediente' />
         )}
       </button>
     </Container>

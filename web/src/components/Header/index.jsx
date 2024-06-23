@@ -5,7 +5,7 @@ import { useAuth } from '../../hooks/useAuth'
 import { USER_ROLE } from '../../utils/roles'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import AdminLogo from '../../assets/AdminLogo.svg'
+import { AdminLogo, Close, Menu, Logo, Receipt, SignOut } from '../../assets'
 
 export function Header({ onSearchChange }) {
   const { signOut, user } = useAuth()
@@ -20,7 +20,7 @@ export function Header({ onSearchChange }) {
       <div className='menu' style={{ left: sideMenu ? '0' : '-100%' }}>
         <div className='header'>
           <button className='close' onClick={toggleMenu}>
-            <img src='./src/assets/Close.svg' />
+            <img src={Close} />
           </button>
           <p className='title'>Menu</p>
         </div>
@@ -42,12 +42,12 @@ export function Header({ onSearchChange }) {
 
       <div className='content'>
         <button id='menu' onClick={toggleMenu}>
-          <img src='/src/assets/Menu.svg' />
+          <img src={Menu} />
         </button>
         {user.role === USER_ROLE.ADMIN ? (
           <img src={AdminLogo} alt='' />
         ) : (
-          <img src='./src/assets/Logo.svg' alt='' />
+          <img src={Logo} alt='' />
         )}
         <Input
           placeholder='Busque por pratos ou ingredientes'
@@ -56,14 +56,10 @@ export function Header({ onSearchChange }) {
         {user.role === USER_ROLE.ADMIN ? (
           <Button title='Novo prato' to='/new' className='top-button' />
         ) : (
-          <Button
-            title='Pedidos (0)'
-            icon='/src/assets/Receipt.svg'
-            className='top-button'
-          />
+          <Button title='Pedidos (0)' icon={Receipt} className='top-button' />
         )}
         <button id='signOut' onClick={signOut}>
-          <img src='/src/assets/SignOut.svg' />
+          <img src={SignOut} />
         </button>
       </div>
     </Container>

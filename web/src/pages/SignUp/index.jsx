@@ -5,6 +5,7 @@ import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { api } from '../../services/api'
 import { useNavigate, Link } from 'react-router-dom'
+import { Logo } from '../../assets'
 
 export function SignUp() {
   const [name, setName] = useState('')
@@ -35,7 +36,7 @@ export function SignUp() {
 
   return (
     <Container>
-      <img src='/src/assets/Logo.svg' alt='' />
+      <img src={Logo} alt='' />
       <Form>
         <h1>Crie sua conta</h1>
         <Input

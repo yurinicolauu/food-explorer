@@ -1,14 +1,15 @@
 import { Container } from './styles'
+import { Minus, Plus } from '../../assets'
 
 export function Stepper({ count }) {
   return (
     <Container>
       <button id='minus'>
-        <img src='/src/assets/Minus.svg' alt='' />
+        <img src={Minus} alt='' />
       </button>
       <p>{count}</p>
       <button id='plus'>
-        <img src='/src/assets/Plus.svg' alt='' />
+        <img src={Plus} alt='' />
       </button>
     </Container>
   )
