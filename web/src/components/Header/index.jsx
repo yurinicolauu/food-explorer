@@ -5,6 +5,7 @@ import { useAuth } from '../../hooks/useAuth'
 import { USER_ROLE } from '../../utils/roles'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import AdminLogo from '../../assets/AdminLogo.svg'
 
 export function Header({ onSearchChange }) {
   const { signOut, user } = useAuth()
@@ -44,7 +45,7 @@ export function Header({ onSearchChange }) {
           <img src='/src/assets/Menu.svg' />
         </button>
         {user.role === USER_ROLE.ADMIN ? (
-          <img src='./src/assets/AdminLogo.svg' alt='' />
+          <img src={AdminLogo} alt='' />
         ) : (
           <img src='./src/assets/Logo.svg' alt='' />
         )}
