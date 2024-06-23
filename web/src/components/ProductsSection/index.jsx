@@ -3,6 +3,7 @@ import { Product } from '../Product'
 import { Container } from './styles'
 import { motion, useMotionValue, useAnimate } from 'framer-motion'
 import { api } from '../../services/api'
+import { useAuth } from '../../hooks/useAuth'
 
 export function ProductsSection({ title, category, search }) {
   const [products, setProducts] = useState([])

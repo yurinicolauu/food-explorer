@@ -1,4 +1,4 @@
-import { useAuth } from '../../hooks/auth'
+import { useAuth } from '../../hooks/useAuth'
 import { useState } from 'react'
 import { Container } from './styles'
 import { Form } from '../../components/Form'

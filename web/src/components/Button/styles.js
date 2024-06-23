@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakpoints'
 
 export const Container = styled.button`
   display: flex;
@@ -32,5 +33,9 @@ export const Container = styled.button`
 
   &:disabled {
     background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    padding: 0.4rem 3.2rem;
   }
 `

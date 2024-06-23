@@ -1,10 +1,10 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { AuthContext } from '../contexts/AuthContext'
 import { api } from '../services/api'
 
-export const AuthContext = createContext({})
-
-function AuthProvider({ children }) {
+export function AuthProvider({ children }) {
   const [data, setData] = useState({})
+  const [loading, setLoading] = useState(true)
 
   async function signIn({ email, password }) {
     try {
@@ -29,28 +29,20 @@ function AuthProvider({ children }) {
 
   function signOut() {
     localStorage.removeItem('@foodexplorer:user')
-
     setData({})
   }
 
   useEffect(() => {
     const user = localStorage.getItem('@foodexplorer:user')
-
     if (user) {
       setData({ user: JSON.parse(user) })
     }
+    setLoading(false)
   }, [])
 
   return (
-    <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
+    <AuthContext.Provider value={{ signIn, signOut, loading, user: data.user }}>
       {children}
     </AuthContext.Provider>
   )
 }
-
-function useAuth() {
-  const context = useContext(AuthContext)
-  return context
-}
-
-export { AuthProvider, useAuth }

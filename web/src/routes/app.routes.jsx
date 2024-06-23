@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 import { EditProduct } from '../pages/EditProduct'
 import { Home } from '../pages/Home'
@@ -11,8 +11,8 @@ export function AppRoutes() {
       <Route path='/' element={<Home />} />
       <Route path='/new' element={<NewProduct />} />
       <Route path='/products/:id' element={<Product />} />
-      <Route path='/edit' element={<EditProduct />} />
-      <Route path="*" element={<div>Rota não encontrada</div>} />
+      <Route path='/edit/:id' element={<EditProduct />} />
+      <Route path='*' element={<Navigate to='/' replace />} />
     </Routes>
   )
 }

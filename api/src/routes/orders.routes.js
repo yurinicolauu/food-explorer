@@ -14,7 +14,7 @@ ordersRoutes.get('/', ordersController.index)
 ordersRoutes.get('/:id', ordersController.show)
 ordersRoutes.patch(
 	'/:id',
-	verifyUserAuthorization('admin'),
+	verifyUserAuthorization(['admin']),
 	ordersController.update
 )
 

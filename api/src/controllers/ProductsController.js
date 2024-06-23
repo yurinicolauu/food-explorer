@@ -32,8 +32,9 @@ class ProductsController {
   }
 
   async update(request, response) {
-    const { name, description, category, price, ingredients } = request.body
+    const { name, description, category, price } = request.body
     const { id } = request.params
+    const ingredients = JSON.parse(request.body.ingredients)
 
     const { image } = await knex('products').where({ id }).first()
 

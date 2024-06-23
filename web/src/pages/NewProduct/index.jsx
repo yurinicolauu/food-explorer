@@ -77,7 +77,7 @@ export function NewProduct() {
     <Container>
       <Header />
       <Content>
-        <BackButton title='voltar' to='/' />
+        <BackButton title='voltar' />
         <Form>
           <h1 className='title'>Adicionar prato</h1>
           <FileButton
@@ -134,7 +134,11 @@ export function NewProduct() {
               placeholder='Fale brevemente sobre o prato, seus ingredientes e composição'
               onChange={e => setDescription(e.target.value)}></textarea>
           </div>
-          <Button title='Salvar alterações' onClick={handleNewProduct} />
+          <Button
+            className='save-button'
+            title='Salvar alterações'
+            onClick={handleNewProduct}
+          />
         </Form>
       </Content>
       <Footer />

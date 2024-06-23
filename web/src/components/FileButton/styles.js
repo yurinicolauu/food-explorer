@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakpoints'
 
 export const Container = styled.div`
   display: flex;
@@ -45,6 +46,22 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
       font-size: 1.4rem;
       line-height: 2.4rem;
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    width: 100%;
+
+    input {
+      height: 4.8rem;
+      padding: 0;
+    }
+
+    input::before {
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 50%;
     }
   }
 `

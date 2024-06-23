@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakpoints'
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
-  margin-top: 14.4rem;
+  margin-top: 16.4rem;
   width: 100%;
 
   header {
@@ -22,6 +23,11 @@ export const Content = styled.div`
   align-items: center;
 
   padding: 0 12.4rem;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    padding: 0 2.4rem;
+    gap: 2.4rem;
+  }
 `
 
 export const Hero = styled.div`
@@ -58,6 +64,7 @@ export const Hero = styled.div`
   > h1 {
     font-size: 4rem;
     line-height: 140%;
+    width: 50%;
 
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
@@ -66,7 +73,30 @@ export const Hero = styled.div`
 
   > p {
     font-family: 'Roboto';
+    width: 50%;
 
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    padding: 4rem 2.4rem 4rem 4rem;
+    margin: 0rem 0 1.4rem 0;
+    height: 100%;
+
+    > h1 {
+      font-size: 1.8rem;
+      line-height: 140%;
+      width: 60%;
+    }
+
+    > p {
+      font-size: 1.2rem;
+      width: 60%;
+    }
+
+    > img {
+      width: 45%;
+      height: 100%;
+    }
   }
 `
