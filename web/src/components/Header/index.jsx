@@ -19,7 +19,7 @@ export function Header({ onSearchChange }) {
       <div className='menu' style={{ left: sideMenu ? '0' : '-100%' }}>
         <div className='header'>
           <button className='close' onClick={toggleMenu}>
-            <img src='/src/assets/Close.svg' />
+            <img src='./src/assets/Close.svg' />
           </button>
           <p className='title'>Menu</p>
         </div>
@@ -44,9 +44,9 @@ export function Header({ onSearchChange }) {
           <img src='/src/assets/Menu.svg' />
         </button>
         {user.role === USER_ROLE.ADMIN ? (
-          <img src='/src/assets/AdminLogo.svg' alt='' />
+          <img src='./src/assets/AdminLogo.svg' alt='' />
         ) : (
-          <img src='/src/assets/Logo.svg' alt='' />
+          <img src='./src/assets/Logo.svg' alt='' />
         )}
         <Input
           placeholder='Busque por pratos ou ingredientes'
